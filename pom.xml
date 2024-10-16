@@ -16,6 +16,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.5.2</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>20.0.1</version>
@@ -41,15 +47,15 @@
     </dependencies>
 
     <build>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*.csv</include> <!-- 设置要包含的文件类型，比如 CSV 文件 -->
-                </includes>
-                <targetPath>${project.build.directory}/out</targetPath> <!-- 设置输出文件的目标路径 -->
-            </resource>
-        </resources>
+<!--        <resources>-->
+<!--            <resource>-->
+<!--                <directory>src/main/resources</directory>-->
+<!--                <includes>-->
+<!--                    <include>**/*.csv</include> &lt;!&ndash; 设置要包含的文件类型，比如 CSV 文件 &ndash;&gt;-->
+<!--                </includes>-->
+<!--                <targetPath>${project.build.directory}/out</targetPath> &lt;!&ndash; 设置输出文件的目标路径 &ndash;&gt;-->
+<!--            </resource>-->
+<!--        </resources>-->
 
         <plugins>
             <plugin>

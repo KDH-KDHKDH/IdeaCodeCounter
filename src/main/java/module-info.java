@@ -1,8 +1,8 @@
 module codecounter.codecounder {
     requires javafx.controls;
     requires javafx.fxml;
-    //requires java.desktop;
-    //requires com.opencsv;
+    requires java.desktop;
+    requires com.opencsv;
 
     opens codecounter.counderapp to javafx.fxml;
 
