@@ -1,11 +1,13 @@
 package codecounter.counderapp;
 
+import codecounter.counter.CodeLineCounter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -38,18 +40,42 @@ public class AppPrimaryController {
     // 点击浏览按钮时打开文件选择对话框
     @FXML
     void onBrowseButtonClick(ActionEvent event) {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("选择代码文件");
-        fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Java Files", "*.java"),
-                new FileChooser.ExtensionFilter("All Files", "*.*")
-        );
-        Stage stage = (Stage) browseButton.getScene().getWindow();
-        selectedFile = fileChooser.showOpenDialog(stage);
+//        FileChooser fileChooser = new FileChooser();
+//        fileChooser.setTitle("选择代码文件");
+//        fileChooser.getExtensionFilters().addAll(
+//                new FileChooser.ExtensionFilter("Java Files", "*.java"),
+//                new FileChooser.ExtensionFilter("All Files", "*.*")
+//        );
+//        Stage stage = (Stage) browseButton.getScene().getWindow();
+//        selectedFile = fileChooser.showOpenDialog(stage);
+//
+//        if (selectedFile != null) {
+//            filePathField.setText(selectedFile.getAbsolutePath());
+//            fileListView.getItems().add(selectedFile.getName());
+//        }
 
-        if (selectedFile != null) {
-            filePathField.setText(selectedFile.getAbsolutePath());
-            fileListView.getItems().add(selectedFile.getName());
+        DirectoryChooser directoryChooser = new DirectoryChooser();
+        directoryChooser.setTitle("选择文件夹");
+
+        // 设置初始目录（可选）
+        File initialDirectory = new File(System.getProperty("user.home"));
+        directoryChooser.setInitialDirectory(initialDirectory);
+
+        // 打开文件夹选择对话框
+        Stage stage = (Stage) browseButton.getScene().getWindow();
+        File selectedDirectory = directoryChooser.showDialog(stage);
+
+        if (selectedDirectory != null) {
+            String fpath = selectedDirectory.getAbsolutePath();
+            filePathField.setText(fpath);
+            CodeLineCounter.init();
+            // 统计
+            try {
+                CodeLineCounter.countFilesLines(new File(fpath));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 

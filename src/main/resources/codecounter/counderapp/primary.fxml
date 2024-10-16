@@ -2,29 +2,26 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.ListView?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="codecounter.counderapp.AppPrimaryController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20" fx:controller="codecounter.counderapp.AppPrimaryController">
 
     <!-- 主容器 -->
-    <VBox prefWidth="600" prefHeight="400" spacing="10" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" AnchorPane.bottomAnchor="10.0">
+    <VBox minHeight="400.0" minWidth="600.0" prefHeight="400" prefWidth="600" spacing="10" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
 
         <!-- 标题 -->
-        <Label text="代码统计工具" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+        <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="代码统计工具" />
 
         <!-- 文件选择区域 -->
         <HBox spacing="10">
             <Label text="文件路径：" />
-            <TextField fx:id="filePathField" promptText="请输入或选择文件路径" HBox.hgrow="ALWAYS"/>
-            <Button text="浏览" fx:id="browseButton" onAction="#onBrowseButtonClick" />
+            <TextField fx:id="filePathField" promptText="请输入或选择文件路径" HBox.hgrow="ALWAYS" />
+            <Button fx:id="browseButton" onAction="#onBrowseButtonClick" text="浏览" />
         </HBox>
 
         <!-- 统计结果展示区域 -->
@@ -40,9 +37,9 @@
         </VBox>
 
         <!-- 操作按钮区域 -->
-        <HBox spacing="10" alignment="CENTER_RIGHT">
-            <Button text="开始统计" fx:id="startButton" onAction="#onStartButtonClick" />
-            <Button text="清空" fx:id="clearButton" onAction="#onClearButtonClick" />
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <Button fx:id="startButton" onAction="#onStartButtonClick" text="开始统计" />
+            <Button fx:id="clearButton" onAction="#onClearButtonClick" text="清空" />
         </HBox>
 
     </VBox>
