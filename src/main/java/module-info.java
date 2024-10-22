@@ -7,5 +7,7 @@ module codecounter.codecounder {
     opens codecounter.counderapp to javafx.fxml;
 
     exports codecounter.counderapp;
+    exports codecounter.CSVRead;
+    opens codecounter.CSVRead to javafx.fxml;
 }
 

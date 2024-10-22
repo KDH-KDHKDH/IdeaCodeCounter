@@ -7,11 +7,10 @@
     <list default="true" id="f8a8233d-828b-43f2-b08d-987a795a2429" name="更改" comment="3 Apptable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/AppPrimaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/AppPrimaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/CSVReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/CSVReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/CSVTableView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/CSVTableView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/CSVReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codecounter/CSVRead/CSVReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/CSVTableView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codecounter/CSVRead/CSVTableView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/StartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/StartApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/codecounter/counter/CodeLineCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codecounter/counter/CodeLineCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/codecounter/counderapp/tet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codecounter/counderapp/tet.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +50,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="codecounter" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="codecounter.counter" />
     </key>
@@ -120,7 +122,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729602848819</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="3 Apptable">
+      <option name="closed" value="true" />
+      <created>1729605326002</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729605326003</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

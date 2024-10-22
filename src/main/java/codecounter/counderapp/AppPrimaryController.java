@@ -1,5 +1,7 @@
 package codecounter.counderapp;
 
+import codecounter.CSVRead.CSVReader;
+import codecounter.CSVRead.CSVTableView;
 import codecounter.counter.CodeLineCounter;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
@@ -11,13 +13,12 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 
+import static codecounter.counderapp.AppConstant.csvFilePath;
+
 public class AppPrimaryController {
 
     @FXML
     private TextField filePathField;
-
-    @FXML
-    private TableView<String[]> resultTable;
 
     @FXML
     private ListView<String> fileListView;
@@ -35,10 +36,18 @@ public class AppPrimaryController {
     private File selectedFile;
 
     @FXML
-    TableView<String[]> tableView;
+    private TableView<String[]> tableView;
 
-    @FXML
-    void initialize() {
+    void initTableView() {
+//        // 创建序号列
+//        TableColumn<String[], Integer> serialNumberColumn = new TableColumn<>("Serial Number");
+//        serialNumberColumn.setCellValueFactory(param -> {
+//            int rowIndex = param.getTablePosition().getRow();
+//            return new SimpleIntegerProperty(rowIndex + 1); // 序号从1开始
+//        });
+
+
+        // 数据列
         int n = 0;
         for (String header : AppConstant.initHeader) {
             TableColumn<String[], String> colTemp = new TableColumn<>(header);
@@ -47,6 +56,11 @@ public class AppPrimaryController {
             n++;
             tableView.getColumns().add(colTemp);
         }
+    }
+
+    @FXML
+    void initialize() {
+        initTableView();
     }
 
     // 点击浏览按钮时打开文件选择对话框
@@ -80,13 +94,14 @@ public class AppPrimaryController {
             try {
                 CodeLineCounter.countFilesLines(selectedFile); // 统计
                 CodeLineCounter.outputTable();
-                CSVReader.readCSVFile();    // 读取CSV
+                CSVReader.readCSVFile(csvFilePath);
                 if(CSVReader.csvData != null) CSVTableView.updateTable(tableView);  // 更新表格
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else {
-
+            Alert alert = new Alert(Alert.AlertType.WARNING, "请选择文件！");
+            alert.showAndWait();
         }
     }
 

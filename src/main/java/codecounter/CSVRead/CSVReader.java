@@ -1,4 +1,6 @@
-package codecounter.counderapp;
+package codecounter.CSVRead;
+
+import codecounter.counderapp.AppConstant;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,10 +10,9 @@ import java.util.List;
 
 // CSV文件读取器
 public class CSVReader {
-    static List<String[]> csvData;
+    public static List<String[]> csvData;
 
-    protected static void readCSVFile() {
-        String csvFilePath = AppConstant.csvFilePath;
+    public static void readCSVFile(String csvFilePath) {
         csvData = new ArrayList<>();
         try {
             List<String> lines = Files.readAllLines(Paths.get(csvFilePath));
