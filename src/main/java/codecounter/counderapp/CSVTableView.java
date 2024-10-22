@@ -1,23 +1,10 @@
 package codecounter.counderapp;
 
-import javafx.application.Application;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
-import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.VBox;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-import javafx.util.Callback;
 
-import java.io.File;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class CSVTableView {
     static ArrayList<TableColumn<String[], String>>  ColList;
@@ -36,7 +23,7 @@ public class CSVTableView {
 
     protected static void updateTable() {
         tableView.getItems().clear();
-        tableView.getItems().addAll(CSVReader.data);
+        tableView.getItems().addAll(CSVReader.csvData);
     }
 
     protected static void clearTable() {

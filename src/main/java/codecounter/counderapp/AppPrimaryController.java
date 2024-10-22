@@ -5,12 +5,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.DirectoryChooser;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 
 public class AppPrimaryController {
 
@@ -64,7 +62,7 @@ public class AppPrimaryController {
                 CodeLineCounter.countFilesLines(new File(filePathField.getText()));
                 // 读取CSV显示
                 CSVReader.readCSVFile();
-                if(CSVReader.data != null) CSVTableView.updateTable();
+                if(CSVReader.csvData != null) CSVTableView.updateTable();
             } catch (IOException e) {
                 e.printStackTrace();
             }
