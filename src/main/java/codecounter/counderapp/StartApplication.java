@@ -14,9 +14,15 @@ public class StartApplication extends Application {
 
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
 
+        initScene();
+
         stage.setTitle("CodeCounter");
         stage.setScene(scene);
         stage.show();
+    }
+
+    private void initScene() {
+        CSVTableView.initTable();
     }
 
     public static void main(String[] args) {

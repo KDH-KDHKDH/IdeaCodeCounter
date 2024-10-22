@@ -3,10 +3,7 @@ package codecounter.counderapp;
 import codecounter.counter.CodeLineCounter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -21,7 +18,7 @@ public class AppPrimaryController {
     private TextField filePathField;
 
     @FXML
-    private TextArea resultArea;
+    private TableView<String[]> resultTable;
 
     @FXML
     private ListView<String> fileListView;
@@ -60,19 +57,19 @@ public class AppPrimaryController {
     // 点击开始统计按钮时统计代码
     @FXML
     void onStartButtonClick(ActionEvent event) {
-        if (selectedFile != null) {
+        if (filePathField != null) {
             CodeLineCounter.init();
             // 统计并显示
             try {
                 CodeLineCounter.countFilesLines(new File(filePathField.getText()));
-                //显示
-
+                // 读取CSV显示
+                CSVReader.readCSVFile();
+                if(CSVReader.data != null) CSVTableView.updateTable();
             } catch (IOException e) {
-                resultArea.setText("无法读取文件内容: " + e.getMessage());
                 e.printStackTrace();
             }
         } else {
-            resultArea.setText("请选择一个文件！");
+            //resultArea.setText("请选择一个文件！");
         }
     }
 
@@ -80,7 +77,7 @@ public class AppPrimaryController {
     @FXML
     void onClearButtonClick(ActionEvent event) {
         filePathField.clear();
-        resultArea.clear();
+        CSVTableView.clearTable();
         fileListView.getItems().clear();
         selectedFile = null;
     }

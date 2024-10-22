@@ -1,6 +1,8 @@
 package codecounter.counderapp;
 
 import javafx.application.Application;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -8,44 +10,36 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
-public class CSVTableView extends Application {
+public class CSVTableView {
+    static ArrayList<TableColumn<String[], String>>  ColList;
+    static TableView<String[]> tableView;
 
-
-    @Override
-    public void start(Stage primaryStage) {
-        VBox root = new VBox();
-        TableView<String[]> tableView = new TableView<>();
-
-        // 创建列
-        TableColumn<String[], String> col1 = new TableColumn<>("Column 1");
-        col1.setCellValueFactory(new PropertyValueFactory<>("Column1"));
-        tableView.getColumns().add(col1);
-
-        // 根据CSV的列数添加更多的列...
-
-        // 打开文件选择器
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open CSV File");
-        File selectedFile = fileChooser.showOpenDialog(primaryStage);
-        if (selectedFile != null) {
-            List<String[]> csvData = CSVReader.readCSVFile(selectedFile.getAbsolutePath());
-            tableView.getItems().addAll(csvData);
+    static void initTable() {
+        int n=0;
+        for(String header : AppConstant.initHeader) {
+            TableColumn<String[], String> colTemp = new TableColumn<>(header);
+            final int finalN = n;
+            colTemp.setCellValueFactory(param -> new SimpleStringProperty(param.getValue()[finalN]));
+            n++;
+            tableView.getColumns().add(colTemp);
         }
-
-        root.getChildren().add(tableView);
-        Scene scene = new Scene(root, 800, 600);
-        primaryStage.setTitle("CSV Table View");
-        primaryStage.setScene(scene);
-        primaryStage.show();
     }
 
+    protected static void updateTable() {
+        tableView.getItems().clear();
+        tableView.getItems().addAll(CSVReader.data);
+    }
 
-
-    public static void main(String[] args) {
-        launch(args);
+    protected static void clearTable() {
+        tableView.getItems().clear();
     }
 }
