@@ -168,7 +168,7 @@ public class CodeLineCounter {
     /**
      * 辅助函数，打印输出CSV并在控制台显示统计时间。
      */
-    public static void showTable() {
+    public static void outputTable() {
         System.out.println("Runtime: " + (endTime - startTime));
         CounterFormat.outPutSummaryCSV();
     }

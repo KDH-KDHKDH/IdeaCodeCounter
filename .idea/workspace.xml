@@ -10,6 +10,8 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/CSVReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/CSVReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/CSVTableView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/CSVTableView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/StartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/StartApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/codecounter/counter/CodeLineCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codecounter/counter/CodeLineCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/codecounter/counderapp/tet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codecounter/counderapp/tet.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +104,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729602615424</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="3 Apptable">
+      <option name="closed" value="true" />
+      <created>1729602765285</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1729602765285</updated>
+    </task>
+    <task id="LOCAL-00007" summary="3 Apptable">
+      <option name="closed" value="true" />
+      <created>1729602848819</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1729602848819</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

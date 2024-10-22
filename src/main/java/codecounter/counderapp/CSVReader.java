@@ -10,7 +10,7 @@ import java.util.List;
 public class CSVReader {
     static List<String[]> csvData;
 
-    protected static List<String[]> readCSVFile() {
+    protected static void readCSVFile() {
         String csvFilePath = AppConstant.csvFilePath;
         csvData = new ArrayList<>();
         try {
@@ -22,6 +22,5 @@ public class CSVReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return csvData;
     }
 }
