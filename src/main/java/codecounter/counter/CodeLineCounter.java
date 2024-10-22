@@ -49,13 +49,8 @@ public class CodeLineCounter {
      * 初始化函数，将常见的源文件后缀名添加到集合中。每次统计之前需要重新初始化。
      */
     public static void init() {
-        // 常见的源文件后缀名数组
-        String[] extensions = {
-                "c", "h", "cpp", "cc", "cxx", "hpp", "java", "py", "js", "html",
-                "htm", "css", "ts", "go", "rb", "swift", "rs", "php", "sh", "pl"
-        };
         // 将数组中的后缀名添加到集合中
-        sourceCodeExtensions.addAll(Arrays.asList(extensions));
+        sourceCodeExtensions.addAll(Arrays.asList(Constant.extensions));
         totalLines = 0;
         emptyLines = 0;
         singleCommentLines = 0;
@@ -81,7 +76,7 @@ public class CodeLineCounter {
     /**
      * 核心功能2，对文件行的读入并分类统计。
      */
-    static void linesCount(File file) throws IOException {
+    private static void linesCount(File file) throws IOException {
         String extension = getFileExtension(file.getName());    // 后缀
         extension = extension.toLowerCase();
         if (sourceCodeExtensions.contains(extension)) {         // 源文件判断
@@ -171,22 +166,10 @@ public class CodeLineCounter {
     }
 
     /**
-     * 辅助函数，打印输出表格。
+     * 辅助函数，打印输出CSV并在控制台显示统计时间。
      */
     public static void showTable() {
         System.out.println("Runtime: " + (endTime - startTime));
-        CounterTable.outPutSummaryTable(fileStatsMap);
-    }
-
-    /**
-     * 文件统计数据类，用于存储每个文件的统计信息。
-     */
-    public static class FileStats {
-        int totalLines = 0;
-        int emptyLines = 0;
-        int singleCommentLines = 0;
-        int multiCommentLines = 0;
-        int codeLines = 0;
-        int fileCnt = 0;
+        CounterFormat.outPutSummaryCSV();
     }
 }

@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8a8233d-828b-43f2-b08d-987a795a2429" name="更改" comment="1 right">
+    <list default="true" id="f8a8233d-828b-43f2-b08d-987a795a2429" name="更改" comment="2 浏览文件">
+      <change afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/CSVReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/CSVTableView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/Count.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/codecounter/counter/Constant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/codecounter/counter/FileStats.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/AppPrimaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/AppPrimaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/StartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codecounter/counderapp/StartApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/codecounter/counderapp/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codecounter/counderapp/primary.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/codecounter/counter/CodeLineCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codecounter/counter/CodeLineCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/codecounter/counter/CounterTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codecounter/counter/CounterFormat.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +26,7 @@
       <list>
         <option value="module-info" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -76,7 +83,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729070154841</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="2 浏览文件">
+      <option name="closed" value="true" />
+      <created>1729080431612</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729080431612</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -93,6 +108,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1 re" />
     <MESSAGE value="1 right" />
-    <option name="LAST_COMMIT_MESSAGE" value="1 right" />
+    <MESSAGE value="2 浏览文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="2 浏览文件" />
   </component>
 </project>
